@@ -3,7 +3,7 @@
     "license": "MIT",
     "type": "symfony-bundle",
     "description": "Logging all INSERT, UPDATE and DELETE actions from doctrine events.",
-    "keywords": ["enum","enumeration"],
+    "keywords": ["log", "logging", "save"],
     "homepage": "https://github.com/zunitec/EnumBundle.git",
     "authors": [
         {
