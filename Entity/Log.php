@@ -6,15 +6,16 @@ use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Zuni\EnumBundle\Annotation;
 use Zuni\LogBundle\Enum\LogType;
+use Zuni\LogBundle\Utils\LogInterface;
 
 /**
  * Log
  * 
  * @ORM\Entity
- * @ORM\Table()
+ * @ORM\Table(name=log)
  * @Annotation\HasEnum
  */
-class Log
+class Log implements LogInterface
 {
     
     /**

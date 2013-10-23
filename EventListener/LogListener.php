@@ -9,18 +9,29 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Zuni\LogBundle\Entity\Log;
 use Zuni\LogBundle\Enum\LogType;
 use Zuni\LogBundle\Enum\LogTypeEnum;
+use Zuni\LogBundle\Factory\AbstractLogFactory;
 
 class LogListener
 {
 
-    protected $container;
-    private $needsFlush = false;
-
+    /**
+     * @var ContainerInterface
+     */
+    private $container;
+    
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
     }
 
+    /**
+     * Recebe todos os eventos para persitir o log
+     */
+    private function index(AbstractLogFactory $logFactory)
+    {
+//        $entityManager = $this->container->get("doctrine.orm.entity_manager");
+    }
+    
     public function postPersist(LifecycleEventArgs $args)
     {
         if (!$args->getEntity() instanceof Log) {
@@ -59,10 +70,7 @@ class LogListener
 
     public function postFlush(PostFlushEventArgs $args)
     {
-        if ($this->needsFlush) {
-            $this->needsFlush = false;
-            $args->getEntityManager()->flush();
-        }
+        $args->getEntityManager()->flush();
     }
 
     public function createLog(LifecycleEventArgs $args, LogType $type, $changes = array())
