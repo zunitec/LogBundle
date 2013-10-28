@@ -1,6 +1,6 @@
 <?php
 
-namespace Zuni\ZuniwebBundle\Annotation;
+namespace Zuni\LogBundle\Annotation;
 
 /**
  * @Annotation

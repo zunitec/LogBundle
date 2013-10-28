@@ -1,0 +1,46 @@
+{% extends 'ZuniAdminBundle::layout_show.html.twig' %}
+
+{% block page_title %}  {{"log.titulo"|trans}} {% endblock %}
+
+{% block show%}
+
+<table class="record_properties table table-bordered table-hover table-striped table-highlight">
+    <thead>
+        <tr>
+            <td>{{ "log.entityState"|trans }}</td>
+            <td>{{ "log.userId"|trans }}</td>
+            <td>{{ "log.type"|trans }}</td>
+            <td>{{ "log.entityClass"|trans }}</td>
+{#            <td>{{ "log.changes"|trans }}</td>#}
+            <td>{{ "log.time"|trans }}</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td>{{ dump(log.entityState) }}</td>
+            <td>{{ log.userId }}</td>
+            <td>{{ log.type.descricao|trans }}</td>
+            <td>{{ log.entityClass}}</td>
+{#            <td>{{ dump(log.changes)}}</td>#}
+            <td>{{ log.time|date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="form-actions">
+    <ul class="pull-left">
+{#        <li><a href="{{ path('dominio_edit', { 'id': entity.id }) }}" class="btn btn-editar" accesskey="e">{{"acao.editar"|trans}}</a></li>#}
+{#        <li><a class="btn btn-voltar" href="{{ path('dominio') }}" accesskey="v"><i class="m-icon-swapleft"></i> {{"acao.voltar"|trans}}</a></li>#}
+    </ul>
+    <ul class="pull-right">
+       {# <li><a href="{{ path('dominio_new') }}" class="btn btn-adicionar" accesskey="a">{{"acao.novo"|trans}}</a></li>
+        <li>
+            <a href="{{ path('dominio_delete', { 'id': entity.id }) }}" class="btn btn-deletar" accesskey="d">{{"acao.deletar"|trans}}</a>
+        </li>#}
+    </ul>
+</div>
+
+{% endblock show %}
+
+

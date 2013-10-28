@@ -3,6 +3,7 @@
 namespace Zuni\LogBundle\Factory;
 
 use Zuni\LogBundle\Entity\Log;
+use Zuni\LogBundle\Enum\LogTypeEnum;
 
 /**
  *
@@ -15,6 +16,9 @@ class LogFactoryCreate extends AbstractLogFactory
      */
     public function getLog()
     {
+        $log = $this->initLog(new Log());
+        $log->setType(LogTypeEnum::getInstance()->CREATE);
         
+        return $log;
     }
 }
