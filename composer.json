@@ -4,7 +4,7 @@
     "type": "symfony-bundle",
     "description": "Logging all INSERT, UPDATE and DELETE actions from doctrine events.",
     "keywords": ["log", "logging", "save"],
-    "homepage": "https://github.com/zunitec/EnumBundle.git",
+    "homepage": "https://github.com/zunitec/LogBundle.git",
     "authors": [
         {
             "name": "Zunitec Tecnologias",
