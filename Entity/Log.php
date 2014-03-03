@@ -58,7 +58,7 @@ class Log implements LogInterface
     /**
      * @var integer 
      * 
-     * @ORM\Column(name="entity_id", type="integer")
+     * @ORM\Column(name="entity_id", type="string")
      */
     private $entityId;
 
